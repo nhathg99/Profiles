@@ -1,0 +1,396 @@
+/* ======== common =========*/
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+h1,
+h2,
+h3,
+h4 {
+    font-weight: 400;
+}
+
+h1 {
+    font-size: 72px;
+}
+
+h2 {
+    font-size: 36px;
+}
+
+h3 {
+    font-size: 24px;
+}
+
+h4 {
+    font-size: 20px;
+}
+
+p {
+    line-height: 1.5;
+}
+
+img {
+    width: 100%;
+}
+
+span {
+    opacity: 0.6;
+}
+
+html {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+input:focus,
+button:focus {
+    box-shadow: none !important;
+    outline: none;
+}
+
+input,
+button {
+    outline: none;
+    border: none;
+}
+
+label {
+    margin: 0;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+ul {
+    list-style-type: none;
+}
+
+p {
+    margin-bottom: 0;
+}
+
+.dropdown-menu {
+    padding: 16px;
+    border-radius: unset;
+    display: none;
+    margin: 0;
+    box-shadow: 0px 0px 9px 3px #b3acac;
+    border: 0;
+}
+
+
+/* loading */
+
+#loading {
+    background: #000;
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    z-index: 10;
+}
+
+#loading .loading-text {
+    color: rgb(255, 251, 0);
+    text-align: center;
+    width: 700px;
+    margin: 20px auto;
+}
+
+#loading div {
+    border-radius: 50%;
+    border: 4px solid red;
+    position: absolute;
+}
+
+#loading .loading-1 {
+    top: calc(50% - 15px);
+    left: calc(50% - 15px);
+    width: 30px;
+    height: 30px;
+    animation: loading-1 1s linear infinite;
+}
+
+#loading .loading-2 {
+    top: calc(50% - 30px);
+    left: calc(50% - 30px);
+    width: 60px;
+    height: 60px;
+    animation: loading-2 1s linear infinite;
+}
+
+#loading .loading-3 {
+    top: calc(50% - 50px);
+    left: calc(50% - 50px);
+    width: 100px;
+    height: 100px;
+    animation: loading-3 1s linear infinite;
+}
+
+@keyframes loading-1 {
+    0% {
+        transform: rotate(0deg);
+        border-color: red;
+        border-left-color: black;
+    }
+    50% {
+        transform: rotate(180deg);
+        border-color: green;
+        border-left-color: black;
+    }
+    100% {
+        transform: rotate(360deg);
+        border-color: yellow;
+        border-left-color: black;
+    }
+}
+
+@keyframes loading-2 {
+    0% {
+        transform: rotate(0deg);
+        border-color: green;
+        border-right-color: black;
+    }
+    50% {
+        transform: rotate(-180deg);
+        border-color: yellow;
+        border-right-color: black;
+    }
+    100% {
+        transform: rotate(-360deg);
+        border-color: red;
+        border-right-color: black;
+    }
+}
+
+@keyframes loading-3 {
+    0% {
+        transform: rotate(0deg);
+        border-color: yellow;
+        border-top-color: black;
+    }
+    50% {
+        transform: rotate(180deg);
+        border-color: rgb(183, 250, 0);
+        border-top-color: black;
+    }
+    100% {
+        transform: rotate(360deg);
+        border-color: green;
+        border-top-color: black;
+    }
+}
+
+
+/* ======== header ======= */
+
+#header {
+    width: 100%;
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)), url(https://cdn.pixabay.com/photo/2018/03/07/17/15/balloon-3206530_960_720.jpg);
+}
+
+
+/* ====== header-top ====== */
+
+#header .header-top {
+    padding: 12px 0;
+}
+
+#header .header-top .name-company {
+    font-family: 'Yesteryear', cursive;
+    color: #d4d4d4;
+    font-size: 40px;
+    padding-left: 40px;
+    padding-top: 14px;
+    display: inline-block;
+}
+
+#header .header-top .name-company span {
+    color: orange;
+}
+
+#header .header-top .btn {
+    background: #42b72a;
+    float: right;
+    padding: 10px 16px;
+    font-size: 18px;
+    margin: 24px 40px 0 0;
+}
+
+
+/* ====== header-navbar ====== */
+
+.header-navbar {
+    background: rgba(0, 0, 0, 0.55);
+    margin: 6px 0;
+}
+
+.header-navbar .navbar {
+    justify-content: center;
+}
+
+.header-navbar .navbar-brand {
+    font-size: 20px;
+    padding: 20px 0;
+}
+
+.header-navbar .navbar .collapse {
+    flex: unset;
+}
+
+.header-navbar .navbar-nav .nav-item .nav-link {
+    padding: 20px 28px;
+    font-size: 20px;
+}
+
+
+/* ====== header-center ====== */
+
+.header-center .title {
+    color: orange;
+    width: 390px;
+    text-align: center;
+    margin: auto;
+    padding: 36px 0;
+    font-family: yesterday;
+}
+
+.header-center .form {
+    display: flex;
+    justify-content: center;
+    margin: 0 20px 40px 20px;
+}
+
+.header-center .form .form-control {
+    width: 600px;
+    padding: 10px 10px;
+    height: unset;
+}
+
+
+/* ====== header-contact ====== */
+
+#header .header-contact {
+    padding: 80px 40px 0;
+    color: black;
+    position: relative;
+}
+
+#header .header-contact .info {
+    flex: 1;
+}
+
+#header .header-contact .info i {
+    padding-right: 2px;
+    padding-left: 12px;
+    font-size: 16px;
+}
+
+#header .header-contact .info span {
+    opacity: 0.7;
+}
+
+#header .header-contact .social i {
+    /* color: black; */
+    padding-right: 8px;
+    font-size: 18px;
+}
+
+
+/* ========= log in ======== */
+
+#content {
+    padding: 50px 0 80px;
+}
+
+#content .title {
+    margin-bottom: 40px;
+    text-align: center;
+    color: orange;
+    font-family: yesterday;
+}
+
+.log-in {
+    width: 400px;
+    padding: 20px 36px;
+    border: 1px solid rgba(0, 0, 0, 0.616);
+    box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.596);
+    margin: 0 auto;
+}
+
+.log-in form span {
+    text-align: center;
+    display: block;
+}
+
+.log-in form .btn {
+    margin-left: 20px;
+    width: 90%;
+    padding: 9px;
+    border-radius: 10px;
+}
+
+.log-in form .btn-google,
+.log-in form .btn-face {
+    border: 1px solid #ced4da;
+    margin-top: 4px;
+}
+
+.log-in form .btn-face i {
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    background-position: -40px -15px;
+    margin-bottom: -2px;
+    background-size: 695%;
+    margin-right: 4px;
+    background-repeat: no-repeat;
+    background-image: url(../image/logo_login/face.png);
+}
+
+.log-in form .btn-google i {
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    margin-bottom: -2px;
+    margin-right: 4px;
+    background-size: 100%;
+    background-image: url(../image/logo_login/google.jpg);
+}
+
+.log-in form .btn-create {
+    background: #22ff29d9;
+}
+
+hr.hr-top {
+    margin: 15px 0 7px;
+    position: relative;
+}
+
+hr.hr-top::after {
+    content: 'or';
+    /* opacity: 0.6; */
+    position: absolute;
+    left: 48%;
+    top: -14px;
+    padding: 0 6px;
+    background: white;
+    z-index: 1;
+}
+
+.log-in form .form-input {
+    margin-bottom: 10px;
+}
+
+.log-in form .form-check a {
+    float: right;
+    display: block;
+    margin-left: 70px;
+}
