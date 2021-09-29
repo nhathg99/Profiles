@@ -1,145 +1,306 @@
-@import url('https://fonts.googleapis.com/css?family=Varela+Round');
-html, body {
-    overflow-x: hidden;
-    height: 100%;
-}
-body {
-    background: #fff;
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200&display=swap');
+
+* {
     padding: 0;
     margin: 0;
-    font-family: 'Varela Round', sans-serif;
-}
-.header {
-    display: block;
-    margin: 0 auto;
-    width: 100%;
-    max-width: 100%;
-    box-shadow: none;
-    background-color: #FC466B;
-    position: fixed;
-    height: 60px!important;
-    overflow: hidden;
-    z-index: 10;
-}
-.main {
-    margin: 0 auto;
-    display: block;
-    height: 100%;
-    margin-top: 60px;
-}
-.mainInner{
-    display: table;
-    height: 100%;
-    width: 100%;
-    text-align: center;
-}
-.mainInner div{
-    display:table-cell;
-    vertical-align: middle;
-    font-size: 3em;
-    font-weight: bold;
-    letter-spacing: 1.25px;
-}
-#sidebarMenu {
-    height: 100%;
-    position: fixed;
-    left: 0;
-    width: 250px;
-    margin-top: 60px;
-    transform: translateX(-250px);
-    transition: transform 250ms ease-in-out;
-    background: linear-gradient(180deg, #FC466B 0%, #3F5EFB 100%);
-}
-.sidebarMenuInner{
-    margin:0;
-    padding:0;
-    border-top: 1px solid rgba(255, 255, 255, 0.10);
-}
-.sidebarMenuInner li{
-    list-style: none;
-    color: #fff;
-    text-transform: uppercase;
-    font-weight: bold;
-    padding: 20px;
-    cursor: pointer;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.10);
-}
-.sidebarMenuInner li span{
-    display: block;
-    font-size: 14px;
-    color: rgba(255, 255, 255, 0.50);
-}
-.sidebarMenuInner li a{
-    color: #fff;
-    text-transform: uppercase;
-    font-weight: bold;
-    cursor: pointer;
-    text-decoration: none;
-}
-input[type="checkbox"]:checked ~ #sidebarMenu {
-    transform: translateX(0);
+    box-sizing: border-box;
+
 }
 
-input[type=checkbox] {
-    transition: all 0.3s;
-    box-sizing: border-box;
+.header {
+    font-family: Nunito;
+    width: 96%;
+    height: 37px;
+    margin: 0 auto;
+    margin-top: 20px;
+    position: relative;
+}
+
+.header li {
+    list-style-type: none;
+}
+
+.header a {
+    text-decoration: none;
+}
+
+/* CSS cho .icon-contact------------------------↓------------------------------------ */
+.header .icon-contact {
+    position: absolute;
+    width: 32%;
+    height: 37px;
+    z-index: 1;
+}
+
+.header .icon-contact ul li {
+    display: inline;
+    margin-right: 10px;
+    font-size: 13px;
+    line-height: 37px;
+}
+
+/* CSS cho .icon-contact-------------------------↑----------------------------------- */
+
+
+/* CSS cho menu -------------------------------- ↓  ---------------------------------  */
+.header .menu {
+    position: absolute;
+    width: 32%;
+    height: 37px;
+    left: 38%;
+    z-index: 2;
+}
+
+.header .menu ul li.drop {
+    display: inline-block;
+    margin-left: 16px;
+    margin-right: 16px;
+    line-height: 37px;
+    font-size: 14px;
+    position: relative;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+.header .menu>ul>li.drop>a:after {
+    content: "";
+    height: 1px;
+    left: 0;
+    opacity: 0;
+    pointer-events: none;
+    position: absolute;
+    top: 100%;
+    transform: translateY(1px);
+    transition: .15s all cubic-bezier(.39, .575, .565, 1);
+    width: 100%;
+    background-color: black;
+    margin-top: 3px;
+}
+
+.header .menu>ul>li.active a:after,
+.header .menu>ul>li:hover a:after {
+    opacity: .5;
+    transform: translateY(-8px) translateZ(0);
+    transition-delay: .1s;
+}
+
+
+.header .menu ul li.drop .drop-2>ul {
+    position: absolute;
+    visibility: hidden;
+    /* transition: all ease-out .1s; */
+}
+
+.header .menu>ul>li:hover .drop-2>ul {
+    width: 200px;
+    visibility: visible;
+    background-color: rgba(51, 51, 51, 0.95);
+    transition-delay: .1s;
+    margin-top: -2px;
+}
+
+/* Css cho Logo */
+.header .menu .logo {
+    position: absolute;
+    left: 20%;
+    z-index: 2;
+    padding: 27px 0px;
+}
+
+/* Css cho Logo */
+
+/* CSS cho menu        -----------------------------↑-------------------------------  */
+/* CSS cho sidebar ---------------------------------↓-------------------------------  */
+.header .sidebar #check {
     display: none;
 }
-.sidebarIconToggle {
-    transition: all 0.3s;
-    box-sizing: border-box;
-    cursor: pointer;
+
+.header .sidebar #btn,
+.header .sidebar #close {
+    /* background-color: red; */
+    padding: 10px 10px;
+    z-index: 7;
+}
+
+.header .sidebar #btn {
     position: absolute;
-    z-index: 99;
+    top: 0px;
+    right: 0px;
+    transition: all .1s ease-in-out;
+
+}
+
+.header .sidebar #close {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    margin-right: -400px;
+    transition: all .2s;
+}
+
+.header .sidebar .hideside {
+    width: 400px;
     height: 100%;
-    width: 100%;
-    top: 22px;
-    left: 15px;
-    height: 22px;
-    width: 22px;
+    position: fixed;
+    border: 1px solid rgba(0, 0, 0, 0.151);
+    right: 0;
+    top: 0;
+    overflow: scroll;
+    transition: all .2s ease;
+    margin-right: -400px;
 }
-.spinner {
-    transition: all 0.3s;
-    box-sizing: border-box;
-    position: absolute;
-    height: 3px;
-    width: 100%;
-    background-color: #fff;
+
+.header .sidebar #check:checked~.hideside {
+    margin-right: 0px;
 }
-.horizontal {
-    transition: all 0.3s;
-    box-sizing: border-box;
-    position: relative;
-    float: left;
-    margin-top: 3px;
-}
-.diagonal.part-1 {
-    position: relative;
-    transition: all 0.3s;
-    box-sizing: border-box;
-    float: left;
-}
-.diagonal.part-2 {
-    transition: all 0.3s;
-    box-sizing: border-box;
-    position: relative;
-    float: left;
-    margin-top: 3px;
-}
-input[type=checkbox]:checked ~ .sidebarIconToggle > .horizontal {
-    transition: all 0.3s;
-    box-sizing: border-box;
+
+.header .sidebar #check:checked~label #btn {
+    visibility: visible;
     opacity: 0;
+    pointer-events: none;
+
 }
-input[type=checkbox]:checked ~ .sidebarIconToggle > .diagonal.part-1 {
-    transition: all 0.3s;
-    box-sizing: border-box;
-    transform: rotate(135deg);
-    margin-top: 8px;
+
+.header .sidebar #check:checked~label #close {
+    margin-right: 0px;
 }
-input[type=checkbox]:checked ~ .sidebarIconToggle > .diagonal.part-2 {
-    transition: all 0.3s;
-    box-sizing: border-box;
-    transform: rotate(-135deg);
-    margin-top: -9px;
+
+/* Css-hideside */
+.hideside .top {
+    max-width: 300px;
+    padding-top: 60px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 2rem;
+
 }
+
+.hideside .top .h4,
+.hideside .mid .h4 {
+    font-size: 1.6rem;
+}
+
+.hideside .top h4 {
+    position: relative;
+    text-transform: uppercase;
+    margin-bottom: 35px;
+}
+
+.hideside .top h4:hover,
+.hideside .mid h4:hover {
+    cursor: default;
+}
+
+.hideside .top h4:hover {
+    cursor: default;
+}
+
+.hideside .top h4:after {
+    content: "";
+    position: absolute;
+    width: 40px;
+    height: 1px;
+    background-color: rgba(51, 51, 51, 0.25);
+    left: 0;
+    top: 40px;
+
+}
+
+.hideside .top .follow {
+    display: block;
+    position: relative;
+    margin-top: 20px;
+    font-size: 14px;
+}
+
+.hideside .top .follow:after {
+    content: "";
+    position: absolute;
+    width: 50px;
+    height: 1px;
+    background-color: rgba(51, 51, 51, 0.25);
+    left: 0;
+    top: 23px;
+}
+
+.hideside .top .follow:hover:after {
+    background-color: rgba(51, 51, 51, 0.5);
+    top: 20px;
+}
+
+.hideside .mid {
+    max-width: 300px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 4rem;
+    ;
+
+}
+
+.hideside .mid h4 {
+    position: relative;
+    text-transform: uppercase;
+    margin-bottom: 35px;
+}
+
+.hideside .mid h4:after {
+    content: "";
+    position: absolute;
+    width: 40px;
+    height: 1px;
+    background-color: rgba(51, 51, 51, 0.25);
+    left: 0;
+    top: 40px;
+}
+
+.hideside .mid form input#email {
+    width: 100%;
+    padding: 0 15px;
+    height: 46px;
+    font-size: 14px;
+    font-family: inherit;
+    margin: 15px 0px;
+}
+
+.hideside .mid form input#submit {
+    width: 100%;
+    padding: 0 15px;
+    height: 46px;
+    font-size: 12px;
+    font-family: inherit;
+    color: white;
+    background: #333333;
+    text-transform: uppercase;
+    border: none;
+    border-radius: 3px;
+}
+
+.hideside .mid form input#submit:hover {
+    background: rgba(51, 51, 49, 0.9);
+}
+
+.hideside .bottom {
+    max-width: 300px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 4rem;
+}
+
+.hideside .bottom h4 {
+    position: relative;
+    margin-bottom: 35px;
+    text-transform: uppercase;
+}
+
+.hideside .bottom h4:after {
+    content: "";
+    position: absolute;
+    width: 40px;
+    height: 1px;
+    background-color: rgba(51, 51, 51, 0.25);
+    left: 0;
+    top: 40px;
+}
+
+/* Css-hideside--end */
+/* CSS cho sidebar ------------------------------------↑-------------------------------  */
